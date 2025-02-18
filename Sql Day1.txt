@@ -1,0 +1,29 @@
+Sql Day1:
+---------
+1)Create a new Database using syntax CREATE DATABASE <db_name>?
+2)Create a table studennt using syntax
+ CREATE TABLE<table_name>
+  (
+   var1 datatype,
+   var2 datatype
+   )
+and take the columns sid:int,sname:varchar,marks int?
+3)insert some records in a student table using insert query?
+
+4)add another column to student table using alter keyword 
+   syntax: ALTER TABLE <table_name> [ADD <field_definitions>]
+
+5)drop a column using alter command 
+ syntax:  ALTER TABLE <table_name>  [DROP COLUMN <field_list>
+
+6)Change the column definition in the student table using alter command?
+syntax: ALTER TABLE <table_name>   [ALTER COLUMN <new_field_Definition>]
+
+7)display all the columns and records using select query?
+
+8)update a record in a student table with name='smith' where sid=1001  ?
+
+9)delete a record whose in a student table whose name is 'smith'?
+
+10)show the student table structure after all this operations using a command 
+sp_help <table_name>? 
