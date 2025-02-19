@@ -1,0 +1,72 @@
+SqlDay2:
+--------
+Operators provided by SQL:
+ Arithmetic               ( +     -    *  /  %                          ) 
+ Relational / Comparison  (>    <   >=     <=    =   "!= / <>"          )
+ Logical                  ( AND    OR     NOT                           )
+ Special                  ( IN BETWEEN AND  IS NULL  LIKE ANY ALL EXISTS)
+ SET Operators            ( UNION UNIONALL INTERSECT  EXCEPT            )
+ Concatenation            ( +                                           )
+ 
+
+*)Create a Table employee ,columns required :empid int,ename varchar,job varchar,salary money,da numeric(3,1),hra numeric(3,1),grosssal numeric(8,2),hiredate date
+Arithemetic Operators:
+1)Calculate Annual(12 months) salary of all emps:?
+2)Calculate DA, HRA & Gross salary of all emps.
+ 10% on sal as DA
+ 20% 0n sal as HRA
+ GROSS = sal+TA+HRA?
+
+select EmployeeId,FirstName,(Salary*0.1)as DA ,(Salary*0.2)as HRA,
+((Salary*0.1)+(Salary*0.2)+Salary) AS GROSSASL
+from EMP
+order by (Salary*12) ASc
+_______________________________________________________________
+Relational Operators:
+3) Display the emp records whose salary is more than 2500?
+ SELECT * FROM EMP
+ WHERE SALARY > 2500;
+  
+4)Display the emp records whose salary is 3000 or more?
+   SELECT * FROM EMP
+ WHERE SALARY >= 3000;
+
+
+5) Display the emp records whose  salary is less than 1250?
+  SELECT * FROM EMP
+ WHERE SALARY <1250;
+
+6) Display all managers records?
+   SELECT * FROM EMP
+ WHERE DEPARMENT='MANAGER';
+
+7) Display all emp records except clerks?
+  SELECT * FROM EMP
+ WHERE DEPARTMENT <> 2500;
+
+8) Display the emp records who joined after 1981:?
+    SELECT * FROM EMP
+  WHERE HIREDATE LIKE '1981%';
+
+Logical Operators:
+9) Display all managers and clerks records?
+ SELECT * FROM EMP
+ WHERE DEPARTMENT IN ('MANAGERS','CLERKS');
+
+10) Display the employee records who joined in 1981?hint:hiredate>='1981-1-1' AND hiredate<='1981-12-31'
+11)Display all managers records who joined after may 1981?
+   SELECT * FROM EMP
+   WHERE HIREDATE>'1981-5-31';
+12) Display the emp records whose empnos are 7521, 7499, 7900?
+   SELECT * FROM EMP
+ WHERE EMPNOS IN (7521,7499,7900);
+
+13)Display the emp records who are working in deptno 10 & 30?
+
+SELECT * FROM EMP
+ WHERE DEPTNO IN (10,30);
+
+
+
+ 
+ 
