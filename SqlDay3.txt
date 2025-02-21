@@ -1,0 +1,56 @@
+SqlDay3:
+--------
+Special Operators:
+
+IN-It is used to compare column value with a list of values.
+syntax: <column_name> IN(<value_list>
+
+1)Display the emp records whose empnos are 7499, 7900, 
+7521?
+select * from EMP
+where EmployeeId in (7499, 7900,7521)
+_____________________________
+2) Display all managers and clerks records?
+
+select * from EMP
+where Department in ('HR','IT') ;
+_____________________________
+3) Display the emp records who are working in 
+   10 and 30 depts?
+
+ BETWEEN AND:
+ used to compare column value with a range of values.
+ 
+ It checks column value falls under range or not.
+ Syntax:
+ <column_name> BETWEEN <lower> AND <upper>
+
+4) Display the emp records whose salary is between 2450 and 3000?
+
+5) Display the emp records who joined in 1981?
+   || joined after 1981 hiredate>'31-dec-1981'
+   || joined before 1981 hiredate<'1-jan-1981'
+select * from EMP
+where JoiningDate between '1981-01-01' and '1981-12-31'
+_______________________________
+Like: It is used to compare column value with text pattern
+syntax:Syntax:
+ <column_name> LIKE <text_pattern>
+|| % replaces 0 or any no of chars
+|| _ replaces one char
+6)Display the emp records whose names are started 
+with 'S':?
+select * from EMP
+where FirstName like 'S%'
+7) Display the emp records whose names are ended with 
+'S':?
+select * from EMP
+where FirstName like '%S'
+8)Display the emp records whose name's 2nd char A?
+select * from EMP
+where FirstName like '_a%'
+9) Display the emp records whose name has 4 chars?
+
+10) Display the emp records whose name is not started with 'S':?
+select * from EMP
+where FirstName like '____'
