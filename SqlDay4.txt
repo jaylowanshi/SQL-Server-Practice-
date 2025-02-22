@@ -1,0 +1,60 @@
+SqlDay4:
+--------
+ISNULL:it is used to compare column value with NULL
+    Syntax:
+   I) <column> IS nul 
+   II) <column> IS NOT NULL
+1)Display the emp records who are not getting commission?
+2) Display the emp records who are getting commission?
+
+ Concatenation Operation Operator:(+)
+3)Dissplay enames and jobs as 1 column?
+  OUTPUT: ename_job
+        ----------------
+          SMITH CLERK
+          ALLEN SALESMA
+ UPDATE: it is used to modify the data.
+ SYNTAX:UPDATE <table_name>
+       SET <field_name>=<new_value>[,<field_name>=<new_value>…..]
+       [WHERE <condition>];
+4) Increase 2000 rupees salary to an emp whose 
+   empno is 7934 [updating single column value]?
+5)  Modify job value as manager, sal as 6000 to an 
+    emp whose empno is 7369 [updating multiple 
+    column values]?
+  Delete:used to delete the records
+  SYNTAX:DELETE FROM <table_name>
+         WHERE <condition>;
+6) Delete an emp record whose  empno is 7934?
+ MERGE: MERGE => Combine 
+ MERGE command is used to deal with 
+ REPLICAs [Duplicate copies].
+ It is used to apply one table changes to its REPLICA.
+ MERGE = UPDATE + INSERT
+ MERGE is a combination of UPDATE & INSERT 
+ commands.
+
+ CUTOMER1 S              CUSTOMER2 T
+ CID CNAME CCITY         CID  CNAME CCITY
+ 1001 A    HYD           1001 A      HYD
+ 1002 B    PUNE          1002 B      PUNE
+ 1003 C    VIZAG         1003 C      CHENNAI
+
+  Syntax:
+MERGE INTO <target_table_name> <alias>
+ USING <source_table_name> <alias>
+ ON(<condition>)
+ WHEN matched THEN
+ UPDATE query
+ WHEN not matched THEN
+ INSERT query;
+ 
+7)Using above syntax merge two tables customer1 and customer2 after merging customer1 values have to change to customer2 values?
+
+ CUSTOMER1 
+ cid cnameccity
+ 1001 A HYD
+ 1002 B PUNE
+ 1003 C CHENNAI
+ 
+ 
