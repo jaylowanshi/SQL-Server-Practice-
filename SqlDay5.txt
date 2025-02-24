@@ -1,0 +1,93 @@
+SqlDay5:
+--------
+
+=>Built in Functions in Sql Server:
+ i) String Functions: Lower(), Upper(), Left(), Right(), Ltrim(), Rtrim(), Len(), Substring(), Trim(), Concat(), Charindex(), Replicate()
+
+1)Display all employee names in Lowercase ?
+  syntax: lower(<string>)
+
+2)Display all employee names in Uppercase ?
+  syntax: upper(<string>)
+
+3)Display the employee records whose names are having 6 chars?
+  syntax: len(<string>)
+
+4)Concatenate(Combine) the strings 'raj','kumar','varma' using concatination()?
+  syntax: concat(string1,string2,string3,........,stringn-1,stringn)
+
+5)Display the employee records whose names are started with 's' using left()?
+  syntax: left(<string>,<no of chars>)
+
+6)i)Display 'sai' from the string 'sai teja' using left()?
+  select left('sai teja',3); 
+  ii)Display 'sai t' from the string 'sai teja' using left()?
+  select left('sai teja',5); 
+  iii)Display 'teja' from the string 'sai teja' using right()?
+      Syntax:right(<string>,<no of chars>)
+   select right('sai teja',4); 
+  iv)Display 'kumar' from the string 'rak kumar varma' using right()?
+    select right(left('raj kumar varma',9),5); 
+
+7)i)Display 'varma' from the string 'raj kumar varma' using substring()?
+    syntax:substring(<string>,<position>,<no of chars>)
+select substring('raj kumar varma',11,5); 
+  ii)Display 'raj' from string 'raj kumar varma' using substring()?
+select substring('raj kumar varma',1,3);
+  iii)Display 'kumar' from string 'raj kumar varma' suing substring()?
+select substring('raj kumar varma',4,5);
+
+8)Display the employee records whose name is ended with vowels?
+select  * from emp
+ where  right(FirstName,1)in ('a','e','i','o','u');
+
+
+9)i)Display the position where 'teja' is found in the string 'ravi teja' by using charindex()?
+  syntax:charindex(<substring>,<string>,<position>)
+ select CHARINDEX('teja','Ravi Teja')
+
+
+  ii)Display the position where the second occurence of 'is' is found in the string 'this is his wish' by using charindex()?
+ select CHARINDEX('is','this is his wish',CHARINDEX('is','this is his wish')+1)
+
+  iii)Display the employee records whose names are having 'am' chars?
+ select  * from emp
+ where  CHARINDEX('am',FirstName)<>0
+
+10)i)Remove '@@@' from Left side of the  string '@@@Raju@@@' by using Ltrim()?
+   syntax: Ltrim(<string>[,<char/chars>])
+
+   ii)Remove '@@@' from right side of the string '@@@Raju@@@' by using Rtrim()?
+   syntax: Rtrim(<string>[,<char/chars>])
+
+   iii)Remove '@@@' from both sides of a string '@@@Raju@@@' by using Trim()?
+   Syntax: Trim(<Leading/trailing/both><char>from<string>)
+   select TRIM('@'from'@@@JAY@@@');
+
+   iV)Remove '@@@' from Left side of the  string '@@@Raju@@@' by using Trim()?
+   select TRIM(leading'@'from'@@@JAY@@@');
+
+   v) Remove '@@@' from right side of the string '@@@Raju@@@' by using Trim()?
+   select TRIM(trailing'@'from'@@@JAY@@@');
+
+11)Replace the string 'abc' with 'xyz' from 'abcaabbccabc' by using Replace()?
+   syntax: Replace(<string>,<search_string>,<replace_string>)
+
+12)Replace the characters  'abc' with 'xyz' from 'abcaabbccabc' by using Translate()?
+   syntax: Translate(<string>,<search_string>,<replace_string> 
+
+Note:The difference between Replace and translate is Replace will read the string in the form of strings(words) and Translate will read the string in the form of characters.
+
+13)print '*' character five times using Replicate()?
+   syntax: Replicate(<char>,<no of times>)
+
+14)Printf 'X' character Six times by using Replicate()?
+
+15)print acno 1234567890 as XXXXXX7890 by using the Combination of Replicate() and Right()?
+   Hint:Replicate(<char>,<no of times>)+Right('string',<no of chars>)
+  select REPLICATE('X',8)+right(1234567890,4)
+
+
+
+
+
