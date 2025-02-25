@@ -1,0 +1,87 @@
+SqlDay6:
+--------
+ Aggregate Functions [Group Functions]:
+ i)  Sum()
+ ii) Avg()
+iii) Max()
+ iv) Min()
+ v)  Count()
+
+1)Find sum of salaries of all Employees by using Sum()?
+  syntax:sum(<column>)
+
+ Ans: select sum(sal) from emp;
+
+2)Find sum of salaries of Managers ?
+ Ans: select sum(sal) from emp where job='Manager';
+
+3)Find average salary of all Employees by using Avg()?
+  syntax:Avg(<column>)
+ Ans: select AVG(sal) from emp;
+
+4)Find Average Salary of deptno 10?
+ Ans: select AVG(sal) from emp WHERE DEPTNO=10;
+
+5)Find maximum salary in all Employees using Max()?
+  syntax:Max(<column>)
+ Ans: select MAX(sal) from emp;
+
+6)Find maximum salary in all Managers?
+ Ans: select MAX(sal) from emp WHERE JOB='MANAGER';
+
+7)Find Minimum Salary in all Employees By using Min()?
+ Ans: select MIN(sal) from emp;
+
+8)Find Minimum Salary in deptno=10?
+Ans: select MIN(sal) from emp WHERE DEPTNO=10;
+
+9)Find Number of Salesmen in Employee table By using Count()?
+Ans: select COUNT(*) from emp WHERE JOB='SALESMAN';
+
+10)Find Number of Records in Employee Table?
+Ans: select COUNT(*) from emp WHERE DEPTNO=10;
+
+11)Find how many Employees are getting Commission?
+Ans: select COUNT(*) from emp WHERE COMM IS NOT NULL;
+
+Math Functions(Number Functions):
+---------------------------------
+  i) power():  syntax(<number>,<power>)
+ ii) sqrt():   sqrt(<number>)
+iii) floor():  floor(<number>)
+ iv) ceiling():ceiling(<number>)
+  v) sign():   sign(<number>)
+ vi) abs():    abs(<number>)
+vii) round():  round(<number>,<no of decimal places>)
+
+ 1)Find the value of 2 to the power of 3?
+Ans:   SELECT POWER(2,3);
+
+ 2)Find the SquareRoot value of 100?
+Ans:   SELECT SQRT(100);
+
+ 3)Find the sign of -345,550,0?
+Ans: SELECT SIGN(-345);
+
+ 4)Find the lower rounded value of 123.4567?
+Ans: SELECT FLOOR(123.4567)
+
+ 5)Find the upper rounded value of 123.2345?
+Ans: SELECT CEILING(123.4567)
+
+ 6)Find the Absolute value of -760,800,0?
+Ans:  select Abs(-760);
+
+ 7)Find the Rounded value of 123.45678 and 123.65278 upto decimals?
+Ans: SELECT ROUND(123.45678,0);
+     SELECT ROUND(123.65278,0);
+
+ 8)Find the Rounded value of 123.45678 upto 3 decimals?
+Ans: SELECT ROUND(123.45678,3);
+
+ 9)Find the Rounded value of 123.45678 in 10s?
+Ans: SELECT ROUND(123.45678,-1);
+
+10)Find the Rounded value of 3456.2345 in 1000s?
+Ans: SELECT ROUND(3456.2345,-3);
+  
