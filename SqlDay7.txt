@@ -1,0 +1,92 @@
+SqlDay7:
+--------
+Date Functions:
+---------------
+  i) Getdate() :gives current date
+
+ ii) Datepart():Used get Part of the date, syntax: Datepart(<interval>,<date>)
+
+iii) Datename():Used get Part of the date, syntax: Datename(<interval>,<date>)
+
+ iv) Dateadd() :It can be used to add days or months or years to specific date, syntax: Dateadd(<interval>,<number>,<date>)
+
+  v) Eomonth() :used to get last date in the month, syntax: Eomonth(<date>,<number>)
+
+ vi) Datediff():used to get difference between 2 dates, syntax: DateDiff(<interval>,<start_date>,<end_date>)
+
+vii) Format()  :used to get dates in different format like date,currency,number formats syntax: Format(<value>,<format>,[culture]) 
+--------------------------------------------------------------------------------------------
+
+ 1) Display the Current Date by using Date functions?
+Ans: SELECT GETDATE()
+
+ 2) Display the Employee records who joined in 1980,1982,1984?
+Ans: SELECT * FROM EMP
+     WHERE DATEPART(YY,HIREDATE) IN (1980,1982,1984)
+
+ 3) Display the Employee records who joined in 1st and 4th quarter?
+Ans: SELECT * FROM EMP
+     WHERE DATEPART(QQ,HIREDATE) in (1,4)
+
+ 4) Display the Date by Adding 2 days to todays's date?
+Ans: SELECT  DATEADD(DD,2,getdate())
+
+ 5) Display the Date by Adding 2 months to todays's date?
+Ans: SELECT  DATEADD(MM,2,getdate())
+
+ 6) Display the Date by Adding 2 Years to today's date?
+Ans: SELECT  DATEADD(YY,2,getdate())
+
+ 7) Display the Date by Subtracting 2 days from today's date?
+Ans: SELECT  DATEADD(DD,-2,getdate())
+
+ 8) Display the Date by Subtracting 2 months from todays's date?
+Ans: SELECT  DATEADD(MM,-2,getdate())
+
+ 9) Display the Date by Subtracting 2 years from todays's date?
+Ans: SELECT  DATEADD(YY,-2,getdate())
+
+10) Display the last date of current month?
+Ans: SELECT  EOMONTH(GETDATE(),0)
+
+11) Display the last date of next month?
+Ans: SELECT  EOMONTH(GETDATE(),1)
+
+12) Displat the last date of previous month?
+Ans: SELECT  EOMONTH(GETDATE(),-1)
+
+13) Find the DateDifference between '2022-1-1','2023-1-1' in numbers of days?
+Ans: SELECT  DATEDIFF(DD,'2022-1-1','2023-1-1')
+
+14) Find the DateDifference between '2022-1-1','2023-1-1' in numbers of months?
+Ans: SELECT  DATEDIFF(MM,'2022-1-1','2023-1-1')
+
+15) Find the DateDifference between '2022-1-1','2023-1-1' in numbers of Years?
+Ans: SELECT  DATEDIFF(YY,'2022-1-1','2023-1-1')
+
+16) Find the Experience of all Employees?
+Ans: SELECT EMPNO,ENAME,JOB,
+     DATEDIFF(YY,HIREDATE,GETDATE())AS EXPERIENCE  
+     FROM EMP
+
+17) Display the EmployeeNames and hiredates Display hiredates in India date format?
+Ans: SELECT ENAME,FORMAT(HIREDATE,'dd-MM-yyyy')AS HIREDATE FROM EMP
+
+18) Display the EmployeeNames and hiredates Display hiredates in Us date format?
+Ans: SELECT ENAME,FORMAT(HIREDATE,'MM-dd-yyyy')AS HIREDATE FROM EMP
+
+19) Display the EmployeeNames and Salaries Apply $ to salaries? 
+Ans: SELECT ENAME,FORMAT(SAL,'c')as sal from EMP
+
+
+20) Display the Employee records who joined today?
+Ans: SELECT * FROM EMP
+     where HIREDATE = getdate();
+
+
+
+
+
+
+
+
