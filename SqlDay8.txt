@@ -1,0 +1,70 @@
+SqlDay8:
+--------
+Analytical Functions:
+---------------------
+i)Rank()=>Used to apply ranks to records according to specific column, it does not give sequential ranks when multiple value are same.
+
+        syntax:Rank()over([partition by <column>]order by <column> asc/desc)
+
+ii)Dense_rank()=>used to apply ranks to records according to specific column, always follows sequences inn ranking.
+
+        syntax: Dense_rank()over(partition by <column> order by Asc/Desc)
+
+iii)Row_number()=>used to apply row number.
+
+        syntax:Row_number()over(partition by<column> order by <column> asc/desc)
+
+Conversion Functions:
+--------------------
+i)Cast()=>used to convert the data from one type to another
+          syntax:cast(<value>as<target type>)
+ii)Convert()=>used to convert the data from one type to another,using conversion functions we can display date in different formats where as it is not possible with cast().
+         syntax:Convert(<target_type>,<value>,[,<date_style>])
+Other Functions:
+----------------
+1)IsNull()=>is used to replace the nulls. syntax:Isnull(<value1>,<value2>)
+2)Coalesce()=>is used to get first not null value in the list. syntax:Coalesce(<value1>,<value2>,<value3>,-----<valuen>)
+-----------------------------------------------------------------------------------------------------------------------------------------
+1)Apply Ranks to all employees Give top Rank to highest salaried employee ?
+
+2)Apply the  Ranks with in dept?
+
+3)Apply Row numbers to emp table records according to salary descending order?
+Ans: select sal,
+     ROW_NUMBER() over( order by sal desc) as Rank  from emp
+
+4)Display the names and salaries as following :  ?
+                 Smith earns 800
+                 Allen earns 600  
+Ans: select ENAME+' earns '+cast(sal as varchar) from emp
+
+5)Display the emp names, hiredate and job as following:  ?
+                 Smith Joined on 1980-12-20 as Clerk
+                 Allen Joined on 1981-05-17 as Salesman
+
+Ans: select ENAME+' Joined on  '+cast(HIREDATE as varchar)+' as '+JOB from emp
+
+6)Display the emp names, hiredate and job as following:  ?
+                 Smith Joined on 20-12-1980 as Clerk
+                 Allen Joined on 17-05-1980 as Salesman
+Ans: 
+7)Calculate Total Salary of Employees[Sal+Comm]?
+8) CUSTOMER:
+   ------------------------------------------
+  | CID   CNAME      MOBILE1      MOBILE2    |
+  |------------------------------------------|
+  | 1001    A        9123456789   null       |
+  | 1002    B        null         9234567788 |
+  | 1003    C        7123456789   6912345678 |
+   ------------------------------------------
+Display the Customer Data as following:
+   -------------------
+  | CNAME  MOBILE     |
+  |-------------------|
+  |   A    9123456789 |
+  |   B    9234567788 |
+  |   C    7123456789 |
+   -------------------
+
+
+
